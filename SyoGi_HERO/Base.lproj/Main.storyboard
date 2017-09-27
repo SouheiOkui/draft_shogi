@@ -785,8 +785,11 @@
                                 <rect key="frame" x="16" y="165" width="60" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="chose5" destination="GQN-a8-wnt" eventType="touchUpInside" id="UW3-JB-5kP"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cs.png" translatesAutoresizingMaskIntoConstraints="NO" id="kqK-h6-69H">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wing.png" translatesAutoresizingMaskIntoConstraints="NO" id="kqK-h6-69H">
                                 <rect key="frame" x="16" y="167" width="60" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1174,8 +1177,11 @@
                                 <rect key="frame" x="16" y="164" width="60" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.4981271404109589" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="chose5" destination="BL7-QX-6W1" eventType="touchUpInside" id="zDb-sg-vX6"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cs.png" translatesAutoresizingMaskIntoConstraints="NO" id="wgb-eg-Yuw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wing.png" translatesAutoresizingMaskIntoConstraints="NO" id="wgb-eg-Yuw">
                                 <rect key="frame" x="16" y="166" width="60" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1972,5 +1978,6 @@
         <image name="tama.png" width="117" height="74"/>
         <image name="touryo.png" width="1594" height="1263"/>
         <image name="touryo2.png" width="1594" height="1263"/>
+        <image name="wing.png" width="116" height="75"/>
     </resources>
 </document>

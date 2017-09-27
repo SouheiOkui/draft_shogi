@@ -270,11 +270,11 @@ class Chose2ViewController: UIViewController {
         komaButtns4.backgroundColor = UIColor.blue
         chouse(komaNo: 6)
     }
-    /*@IBAction func chose5(){
+    @IBAction func chose5(){
         protUpClear()
         komaButtns5.backgroundColor = UIColor.blue
         chouse(komaNo: 12)
-    }*/
+    }
     @IBAction func chose6(){
         protUpClear()
         komaButtns6.backgroundColor = UIColor.blue

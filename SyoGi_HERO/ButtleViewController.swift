@@ -920,15 +920,18 @@ class ButtleViewController: UIViewController {
     func callWing(cell_No : Int){
         if  0 < cell_No && cell_No < 24 && cell_No % 3 == 2 {
             print("中央")
-            for x in (cell_No)/3 ... 7{
-                if boardMatrix[x][1] > 0{
-                    break
+            for x in (cell_No+2)/3 ... 8{
+                if x < 8{
+                    if boardMatrix[x][1] > 0{
+                        break
+                    }
+                    else if boardMatrix[x][1] < 0{
+                        possibleMatrix [x][1] = 1
+                        break
+                    }
+                    else {possibleMatrix [x][1] = 1}
                 }
-                else if boardMatrix[x][1] < 0{
-                    possibleMatrix [x][1] = 1
-                    break
-                }
-                else {possibleMatrix [x][1] = 1}
+                
             }
             for x in (0 ... (cell_No-3)/3).reversed(){
                 print("aaaa"+String(x))
@@ -948,15 +951,18 @@ class ButtleViewController: UIViewController {
         }
         else if  0 < cell_No && cell_No < 25 && cell_No % 3 == 0 {
             print("右サイド")
-            for x in (cell_No-1)/3 ... 7{
-                if boardMatrix[x][2] > 0{
-                    break
+            for x in (cell_No + 2)/3 ... 8{
+                if x < 8{
+                    if boardMatrix[x][2] > 0{
+                        break
+                    }
+                    else if boardMatrix[x][2] < 0{
+                        possibleMatrix [x][2] = 1
+                        break
+                    }
+                    else {possibleMatrix [x][2] = 1}
                 }
-                else if boardMatrix[x][2] < 0{
-                    possibleMatrix [x][2] = 1
-                    break
-                }
-                else {possibleMatrix [x][2] = 1}
+                
             }
             for x in (0 ... (cell_No-4)/3).reversed() {
                 if boardMatrix[x][2] > 0{
@@ -977,15 +983,18 @@ class ButtleViewController: UIViewController {
         }
         else if  0 <= cell_No && cell_No < 24 && cell_No % 3 == 1 {
             print("左サイド")
-            for x in (cell_No)/3 ... 7{
-                if boardMatrix[x][0] > 0{
-                    break
+            for x in (cell_No+2)/3 ... 8{
+                if x < 8{
+                    if boardMatrix[x][0] > 0{
+                        break
+                    }
+                    else if boardMatrix[x][0] < 0{
+                        possibleMatrix [x][0] = 1
+                        break
+                    }
+                    else {possibleMatrix [x][0] = 1}
                 }
-                else if boardMatrix[x][0] < 0{
-                    possibleMatrix [x][0] = 1
-                    break
-                }
-                else {possibleMatrix [x][0] = 1}
+                
             }
             for x in (0 ... (cell_No-3)/3).reversed(){
                 if boardMatrix[x][0] > 0{
@@ -1010,15 +1019,18 @@ class ButtleViewController: UIViewController {
     func callWingR(cell_No : Int){
         if  0 < cell_No && cell_No < 24 && cell_No % 3 == 2 {
             print("中央")
-            for x in (cell_No)/3 ... 7{
-                if boardMatrix[x][1] < 0{
-                    break
+            for x in (cell_No+2)/3 ... 8{
+                if x < 8{
+                    if boardMatrix[x][1] < 0{
+                        break
+                    }
+                    else if boardMatrix[x][1] > 0{
+                        possibleP2Matrix [x][1] = 1
+                        break
+                    }
+                    else {possibleP2Matrix [x][1] = 1}
                 }
-                else if boardMatrix[x][1] > 0{
-                    possibleP2Matrix [x][1] = 1
-                    break
-                }
-                else {possibleP2Matrix [x][1] = 1}
+                
             }
             for x in (0 ... (cell_No-3)/3).reversed(){
                 print("aaaa"+String(x))
@@ -1038,15 +1050,18 @@ class ButtleViewController: UIViewController {
         }
         else if  0 < cell_No && cell_No < 25 && cell_No % 3 == 0 {
             print("右サイド")
-            for x in (cell_No-1)/3 ... 7{
-                if boardMatrix[x][2] < 0{
-                    break
+            for x in (cell_No+2)/3 ... 8{
+                if x < 8{
+                    if boardMatrix[x][2] < 0{
+                        break
+                    }
+                    else if boardMatrix[x][2] > 0{
+                        possibleP2Matrix [x][2] = 1
+                        break
+                    }
+                    else {possibleP2Matrix [x][2] = 1}
+
                 }
-                else if boardMatrix[x][2] > 0{
-                    possibleP2Matrix [x][2] = 1
-                    break
-                }
-                else {possibleP2Matrix [x][2] = 1}
             }
             for x in (0 ... (cell_No-4)/3).reversed() {
                 if boardMatrix[x][2] < 0{
@@ -1067,15 +1082,18 @@ class ButtleViewController: UIViewController {
         }
         else if  0 <= cell_No && cell_No < 24 && cell_No % 3 == 1 {
             print("左サイド")
-            for x in (cell_No)/3 ... 7{
-                if boardMatrix[x][0] < 0{
-                    break
+            for x in (cell_No+2)/3 ... 8{
+                if x < 8{
+                    if boardMatrix[x][0] < 0{
+                        break
+                    }
+                    else if boardMatrix[x][0] > 0{
+                        possibleP2Matrix [x][0] = 1
+                        break
+                    }
+                    else {possibleP2Matrix [x][0] = 1}
                 }
-                else if boardMatrix[x][0] > 0{
-                    possibleP2Matrix [x][0] = 1
-                    break
-                }
-                else {possibleP2Matrix [x][0] = 1}
+               
             }
             for x in (0 ... (cell_No-3)/3).reversed(){
                 if boardMatrix[x][0] < 0{
@@ -2125,7 +2143,7 @@ class ButtleViewController: UIViewController {
                 if boardMatrix[x][y] == 1 {boardMatrix[x][y] = 7}
                 if 4 <= boardMatrix[x][y] && boardMatrix[x][y] <= 6 {boardMatrix[x][y] = boardMatrix[x][y] + 5}
                 if boardMatrix[x][y] == 12 {boardMatrix[x][y] = 13}
-                if boardMatrix[x][y] == 14 {boardMatrix[x][y] = 15}
+                //if boardMatrix[x][y] == 14 {boardMatrix[x][y] = 15}
                 if boardMatrix[x][y] == 16 {boardMatrix[x][y] = 17}
             }
         }
@@ -2138,7 +2156,7 @@ class ButtleViewController: UIViewController {
                     boardMatrix[x][y] = boardMatrix[x][y] - 5
                 }
                 if boardMatrix[x][y] == -12 {boardMatrix[x][y] = -13}
-                if boardMatrix[x][y] == -14 {boardMatrix[x][y] = -15}
+                //if boardMatrix[x][y] == -14 {boardMatrix[x][y] = -15}
                 if boardMatrix[x][y] == -16 {boardMatrix[x][y] = -17}
             }
         }
